@@ -1,10 +1,10 @@
 ---
 name: agentconcierge                                      
-  description: Find and recommend AI agents for any workflow using AgentConcierge. Searches 9,800+ agents and returns 5 ranked
+   description: Find and recommend AI agents for any workflow using AgentConcierge. Searches 9,800+ agents and returns 5 ranked
   recommendations with match scores.                                                                                                     
-  version: 1.0.0
-  license: MIT-0                                                                                                                         
-  metadata:                                                 
+   version: 1.0.0
+   license: MIT-0                                                                                                                         
+   metadata:                                                 
     emoji: "🤖"
     openclaw:                                                                                                                            
       requires:
@@ -41,4 +41,4 @@ name: agentconcierge
   - 429: wait 60 seconds and retry                          
   - 400: ask user for missing role or painPoint
   - 500: tell user to visit https://agentconcierge.io/search
-  - 
+  - ---
