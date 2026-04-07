@@ -5,10 +5,10 @@ name: agentconcierge
   license: MIT-0                                                                                                                         
   metadata:                                                 
     emoji: "🤖"
-    openclaw:
+    openclaw:                                                                                                                            
       requires:
-        bins:
-          - curl
+        bins:                                                                                                                            
+          - curl                                            
   ---
 
   # AgentConcierge
@@ -18,30 +18,27 @@ name: agentconcierge
   ## When to Use                                                                                                                         
   - User asks which AI agents or tools to use for their job or task
   - User wants AI recommendations for a specific role or pain point
-                                                                                                                                         
+
   ## API Call
-                                                                                                                                         
-  ```bash                                                   
-  curl -s -X POST https://agentconcierge.io/api/recommend \
-    -H "Content-Type: application/json" \
-    -d '{"role":"ROLE","painPoint":"PAIN","tools":"TOOLS","budget":"BUDGET","teamSize":"TEAM"}'
-                                                                                                                                         
-  Replace ROLE and PAIN with what the user told you. Ask for them if missing.
-                                                                                                                                         
-  Present Results Like This                                 
 
-  🤖 Top matches for your profile:
-
-  1. **Agent Name** — 94% match                                                                                                          
-     One line description.
-     ✓ Match reason 1                                                                                                                    
-     ✓ Match reason 2                                       
-     💰 $19/mo — https://url
-
-  Errors
-
-  - 429: rate limited — wait 60 seconds and retry                                                                                        
-  - 400: missing role or painPoint — ask the user
-  - 500: tell user to visit https://agentconcierge.io/search                                                                             
+  Call this endpoint with the user's context:                                                                                            
+   
+  POST https://agentconcierge.io/api/recommend                                                                                           
                                                             
-  Once that's committed, let me know and I'll walk you through the ClawHub publish step.
+  Required fields: role, painPoint                                                                                                       
+  Optional fields: tools, budget, teamSize
+                                                                                                                                         
+  Example curl:                                             
+
+  curl -s -X POST https://agentconcierge.io/api/recommend -H "Content-Type: application/json" -d '{"role":"Sales","painPoint":"Cold      
+  outreach","tools":"HubSpot","budget":"$50","teamSize":"solo"}'
+                                                                                                                                         
+  ## Present Results                                        
+
+  List each recommendation with name, match score, two match reasons, price, and URL.                                                    
+   
+  ## Errors                                                                                                                              
+  - 429: wait 60 seconds and retry                          
+  - 400: ask user for missing role or painPoint
+  - 500: tell user to visit https://agentconcierge.io/search
+    
