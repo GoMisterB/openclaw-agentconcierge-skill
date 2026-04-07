@@ -10,6 +10,10 @@ name: agentconcierge
       requires:
         bins:                                                                                                                            
           - curl                                            
+<<<<<<< HEAD
+          
+=======
+>>>>>>> 5b7d5c749235fb7a192f861643f9e53c874c63e9
 
   # AgentConcierge
 
@@ -42,3 +46,4 @@ name: agentconcierge
   - 400: ask user for missing role or painPoint
   - 500: tell user to visit https://agentconcierge.io/search
   - ---
+cat /workspaces/openclaw-agentconcierge-skill/SKILL.md | head -5
