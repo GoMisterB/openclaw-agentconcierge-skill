@@ -10,7 +10,6 @@ name: agentconcierge
       requires:
         bins:                                                                                                                            
           - curl                                            
-  ---
 
   # AgentConcierge
 
