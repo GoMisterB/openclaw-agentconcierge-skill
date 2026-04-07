@@ -9,3 +9,4 @@ git pull origin main --rebase
 npm install -g @openclaw/clawhub
 clawhub login
 clawhub skill publish /workspaces/openclaw-agentconcierge-skill
+clawhub --version
